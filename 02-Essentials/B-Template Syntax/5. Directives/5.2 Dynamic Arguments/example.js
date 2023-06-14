@@ -2,7 +2,7 @@
  * @Author: mangwu                                                             *
  * @File: example.js                                                           *
  * @Date: 2023-06-14 16:33:07                                                  *
- * @LastModifiedDate: 2023-06-14 17:10:02                                      *
+ * @LastModifiedDate: 2023-06-14 17:22:38                                      *
  * @ModifiedBy: mangwu                                                         *
  * -----------------------                                                     *
  * Copyright (c) 2023 mangwu                                                   *
@@ -36,6 +36,7 @@ createApp({
       changeEventType,
     };
   },
+  
   template: `<fieldset><legend>Select a event type </legend>
   <input type="radio" name="event-type" id="click" value="click" checked @click="changeEventType">
   <label for="click">click event type</label><br/>
