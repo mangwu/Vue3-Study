@@ -2,7 +2,7 @@
  * @Author: mangwu                                                             *
  * @File: build.js                                                             *
  * @Date: 2023-06-14 09:37:12                                                  *
- * @LastModifiedDate: 2023-06-14 09:55:18                                      *
+ * @LastModifiedDate: 2023-06-14 17:42:00                                      *
  * @ModifiedBy: mangwu                                                         *
  * -----------------------                                                     *
  * Copyright (c) 2023 mangwu                                                   *
@@ -134,7 +134,7 @@ function main() {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue3 学习笔记源码文档结构<</title>
+    <title>Vue3 学习笔记源码文档结构</title>
     <link rel="stylesheet" href="./style.css">
 		<link rel="shortcut icon" href="./images/结构.svg" type="image/x-icon">
     <link >
