@@ -2,7 +2,7 @@
  * @Author: mangwu                                                             *
  * @File: example.js                                                           *
  * @Date: 2023-06-15 11:16:44                                                  *
- * @LastModifiedDate: 2023-06-15 11:27:13                                      *
+ * @LastModifiedDate: 2023-06-15 14:46:44                                      *
  * @ModifiedBy: mangwu                                                         *
  * -----------------------                                                     *
  * Copyright (c) 2023 mangwu                                                   *
@@ -28,8 +28,10 @@ createApp({
         console.log(count);
         count++;
       } else if (type === "state arr") {
+        // 会引发DOM更新
         state.arr.push("baz");
       } else if (type === "arr") {
+        // 会引发DOM更新
         arr.push("baz");
       }
     }
