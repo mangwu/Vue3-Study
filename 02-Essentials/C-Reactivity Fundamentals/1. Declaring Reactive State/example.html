@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Declaring Reactive State</title>
+  </head>
+  <body>
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+    <div id="app"><button @click="increment">{{ state.count }}</button></div>
+    <script type="module" src="./example.js"></script>
+  </body>
+</html>
