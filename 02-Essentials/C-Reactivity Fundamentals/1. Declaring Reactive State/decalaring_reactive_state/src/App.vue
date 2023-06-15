@@ -1,8 +1,14 @@
 <script setup>
-import { reactive } from 'vue'
+import { reactive, nextTick } from 'vue'
 const state = reactive({ count: 0 })
 function increment() {
   state.count++
+  // DOM 更新前
+  console.log(document.querySelector('button').textContent)
+  nextTick(() => {
+    // DOM 更新后
+    console.log(document.querySelector('button').textContent)
+  })
 }
 </script>
 
