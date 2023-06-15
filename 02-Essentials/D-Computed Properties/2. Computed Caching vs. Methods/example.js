@@ -2,7 +2,7 @@
  * @Author: mangwu                                                             *
  * @File: example.js                                                           *
  * @Date: 2023-06-15 23:10:28                                                  *
- * @LastModifiedDate: 2023-06-15 23:31:31                                      *
+ * @LastModifiedDate: 2023-06-15 23:55:28                                      *
  * @ModifiedBy: mangwu                                                         *
  * -----------------------                                                     *
  * Copyright (c) 2023 mangwu                                                   *
@@ -16,6 +16,12 @@ import { createApp, reactive, computed, ref } from "vue";
 
 createApp({
   setup() {
+    // 用于刷新DOM
+    function refreshDOM() {
+      refreshTime.value = getCurrentDate();
+    }
+    const refreshTime = ref(new Date(Date.now()));
+
     const author = reactive({
       name: "John Doe",
       books: [
@@ -24,20 +30,33 @@ createApp({
         "Vue 4 - The Mystery",
       ],
     });
-    const refresh = ref(false);
-    function refreshDOM() {
-      refresh.value = !refresh.value;
+
+    function getCurrentDate() {
+      return new Date(Date.now());
     }
+    const computedTime = computed(getCurrentDate);
+
     function hasBooks(type = "computed") {
       console.log("hasBooks", type); // 调用者的类型
       return author.books.length > 0 ? "Yes" : "No";
     }
     const publishedBooksMessage = computed(hasBooks);
 
-    return { hasBooks, publishedBooksMessage, refreshDOM, refresh };
+    return {
+      hasBooks,
+      publishedBooksMessage,
+      getCurrentDate,
+      refreshTime,
+      computedTime,
+      refreshDOM,
+    };
   },
-  template: `<span style="display:none">{{ refresh }}</span>
-  <button @click="refreshDOM"> refresh </button><p>Has piblished books</p>
+  template: `
+  <button @click="refreshDOM"> refresh </button>
+  <p>ref time: {{ refreshTime }}</p>
+  <p>method time: {{ getCurrentDate() }}</p>
+  <p>computed time: {{ computedTime }}</p>
+  <p>Has published books</p>
   <p>method ans: {{ hasBooks("method") }}</p>
   <p>computed ans: {{ publishedBooksMessage }}</p>
   `,
