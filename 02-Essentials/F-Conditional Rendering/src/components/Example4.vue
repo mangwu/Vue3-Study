@@ -18,7 +18,8 @@ function closeTemplate() {
 <template>
   <template v-if="hasTemplate">
     <div class="example exmaple4">
-      hidden example4 by switch hasTemplate(current: {{ hasTemplate }}) to false:
+      hidden example4 by switch hasTemplate(current: {{ hasTemplate }}) to
+      false:
       <button @click="closeTemplate" class="close-template">hidden it?</button>
       <br />
       <button @click="handler" name="awesome">
