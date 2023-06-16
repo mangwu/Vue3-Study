@@ -2,7 +2,7 @@
  * @Author: mangwu                                                             *
  * @File: build.js                                                             *
  * @Date: 2023-06-14 09:37:12                                                  *
- * @LastModifiedDate: 2023-06-14 17:42:00                                      *
+ * @LastModifiedDate: 2023-06-16 11:12:52                                      *
  * @ModifiedBy: mangwu                                                         *
  * -----------------------                                                     *
  * Copyright (c) 2023 mangwu                                                   *
@@ -19,7 +19,7 @@ const fs = require("fs");
 const ignore = new Set([
   ".vscode",
   "node_modules",
-  "dist",
+  // "dist",
   "mochawesome-report",
   "coverage.lcov",
   ".nyc_output",
