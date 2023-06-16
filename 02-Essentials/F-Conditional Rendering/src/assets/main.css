@@ -1,0 +1,65 @@
+@import "./base.css";
+
+#app {
+  max-width: 94%;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+.example {
+  cursor: pointer;
+  height: 300px;
+  width: 350px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.03),
+    0 2px 6px -1px rgba(0, 0, 0, 0.02), 0 4px 4px 0 rgba(0, 0, 0, 0.02),
+    3px 0 3px 0 rgba(0, 0, 0, 0.03), 2px 0 6px -1px rgba(0, 0, 0, 0.02),
+    4px 0 4px 0 rgba(0, 0, 0, 0.02);
+  border: 1px solid rgb(243, 243, 243);
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+  padding: 1px 8px;
+  padding-top: 16px;
+}
+.example:hover {
+  transform: scale(1.1);
+  background: #fff;
+}
+.example:hover::before {
+  color: white;
+  position: absolute;
+  font-size: 18px;
+  z-index: 999;
+  background-color: #06ee50;
+  padding: 0px 4px;
+  top: -16px;
+  left: 0;
+  transform: translateX(-50%);
+  height: 32px;
+  opacity: 0.8;
+  width: fit-content;
+  min-width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+}
+#app {
+  display: flex;
+  gap: 32px;
+}
