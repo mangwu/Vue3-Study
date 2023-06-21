@@ -15,15 +15,9 @@ watchEffect(() => {
 })
 function handlerTrueInput(e) {
   trueValue.value = e.target.value;
-  // if (checked.value) {
-  //   checkedValue.value = e.target.value
-  // }
 }
 function handlerFalseInput(e) {
   falseValue.value = e.target.value;
-  // if (!checked.value) {
-  //   checkedValue.value = e.target.value
-  // }
 }
 </script>
 
@@ -55,4 +49,8 @@ function handlerFalseInput(e) {
   </div>
 </template>
 
-<style scoped lang="css"></style>
+<style scoped lang="css">
+.example6:hover::before {
+  content: "2.1 Checkbox";
+}
+</style>
