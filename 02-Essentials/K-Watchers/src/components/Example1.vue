@@ -50,6 +50,9 @@ const handlerLoad =(e) => {
 .example1:hover::before {
   content: "1. Watchers-Basic Example";
 }
+input{
+  width: 250px;
+}
 img {
   max-width: 310px;
   max-height: 190px;
