@@ -2,7 +2,7 @@
  * @Author: mangwu                                                             *
  * @File: build.js                                                             *
  * @Date: 2023-06-14 09:37:12                                                  *
- * @LastModifiedDate: 2023-06-16 11:12:52                                      *
+ * @LastModifiedDate: 2023-06-25 14:50:44                                      *
  * @ModifiedBy: mangwu                                                         *
  * -----------------------                                                     *
  * Copyright (c) 2023 mangwu                                                   *
@@ -29,6 +29,7 @@ const ignore = new Set([
   "./.git",
   "./images",
 ]);
+
 const hash = new Map();
 
 class FileTree {
@@ -52,6 +53,11 @@ class FileTree {
         const curPath = this.path + "/" + file;
         const stats = fs.statSync(curPath);
         let type = stats.isFile() ? "file" : "folder";
+        if (type === "file") {
+          if (file.indexOf(".html") === -1 && file.indexOf(".js") === -1) {
+            continue;
+          }
+        }
         const curFileTree = new FileTree(curPath, file, type);
         hash.set(curPath, [file, type, curFileTree]);
         this.next.push(curFileTree);
@@ -88,7 +94,12 @@ if (this.location) {
 }
 
 const dfs = (fileTree) => {
-  const { name, path, type, next } = fileTree;
+  const {
+    name,
+    path,
+    type,
+    next
+  } = fileTree;
   if (type === "file") {
     return `\t\t<div class="file"><a href="${
       origin + path.substring(2)

@@ -48,7 +48,7 @@ function handler(e, type = "add") {
 </template>
 
 <style scoped lang="css">
-.example5:hover::before {
-  content: "6. Stopping a Watcher";
+.example7:hover::before {
+  content: "7. Stopping a Watcher";
 }
 </style>
