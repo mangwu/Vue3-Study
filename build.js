@@ -2,7 +2,7 @@
  * @Author: mangwu                                                             *
  * @File: build.js                                                             *
  * @Date: 2023-06-14 09:37:12                                                  *
- * @LastModifiedDate: 2023-06-25 14:50:44                                      *
+ * @LastModifiedDate: 2023-06-25 22:37:10                                      *
  * @ModifiedBy: mangwu                                                         *
  * -----------------------                                                     *
  * Copyright (c) 2023 mangwu                                                   *
@@ -52,7 +52,7 @@ class FileTree {
         if (ignore.has(file)) continue;
         const curPath = this.path + "/" + file;
         const stats = fs.statSync(curPath);
-        let type = stats.isFile() ? "file" : "folder";
+        let type = stats.isFile() ? "file" :  "folder";
         if (type === "file") {
           if (file.indexOf(".html") === -1 && file.indexOf(".js") === -1) {
             continue;
