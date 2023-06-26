@@ -1,8 +1,8 @@
 /*
  * @Author: mangwu                                                             *
- * @File: example.js                                                           *
- * @Date: 2023-06-24 03:15:13                                                  *
- * @LastModifiedDate: 2023-06-24 03:18:42                                      *
+ * @File: example3.js                                                          *
+ * @Date: 2023-06-26 23:38:19                                                  *
+ * @LastModifiedDate: 2023-06-26 23:44:00                                      *
  * @ModifiedBy: mangwu                                                         *
  * -----------------------                                                     *
  * Copyright (c) 2023 mangwu                                                   *
@@ -12,20 +12,11 @@
  * ---------------------	--------	----------------------------------------------- *
  */
 
-import {
-  ref,
-  createApp
-} from "vue";
+import { createApp, ref } from "vue";
+const BlogPostRow = {
+  template: `<tr><td>hello vue</td><td>Element Placement Restrictions</td></tr>`,
+};
 
-const AppCpn = {
-  setup() {
-    const msg = ref(`When not using a build step, a Vue component can be 
-    defined as a plain JavaScript object containing Vue-specific options:`)
-    return {
-      msg,
-    }
-  },
-  template: `<p>{{ msg }}</p>`
-}
-
-createApp(AppCpn).mount("#app")
+createApp({
+  components: { BlogPostRow },
+}).mount("#app");

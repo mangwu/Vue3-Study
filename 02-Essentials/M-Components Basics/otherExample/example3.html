@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7.3 Element Placement Restrictions</title>
+  </head>
+  <body>
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+    <div id="app">
+      <table>
+        <tr is="vue:blog-post-row"></tr>
+      </table>
+    </div>
+    <script type="module" src="./example3.js"></script>
+  </body>
+</html>

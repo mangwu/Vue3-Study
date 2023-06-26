@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7.1 Case Insensitivity</title>
+  </head>
+  <body>
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+    <div id="app">
+      <blog-post
+        :title="title"
+        @large-font-size="addSize"
+        :font-size="fontSize"
+      ></blog-post>
+    </div>
+    <script type="module" src="./example2.js"></script>
+  </body>
+</html>
