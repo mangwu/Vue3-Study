@@ -3,7 +3,7 @@ import Example3Son from './Example3Son.vue';
 </script>
 
 <template>
-  <div class="example example1">
+  <div class="example example3">
     <example3-son
       str="Hello Vue"
       :num="52"
@@ -18,7 +18,7 @@ import Example3Son from './Example3Son.vue';
 </template>
 
 <style scoped lang="css">
-.example1:hover::before {
+.example3:hover::before {
   content: "2.3 Passing Different Value Types";
 }
 </style>

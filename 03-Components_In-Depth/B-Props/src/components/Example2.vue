@@ -8,13 +8,13 @@ const data = reactive({
 </script>
 
 <template>
-  <div class="example example1">
+  <div class="example example2">
     <example2-son :title="data.title" :article-content="data.content" />
   </div>
 </template>
 
 <style scoped lang="css">
-.example1:hover::before {
+.example2:hover::before {
   content: "2.1 Prop Name Casing";
 }
 </style>
