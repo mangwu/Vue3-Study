@@ -10,7 +10,6 @@ defineProps({
   },
 });
 defineEmits(["nextArticle"]);
-
 </script>
 
 <template>
