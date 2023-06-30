@@ -1,17 +1,17 @@
 <script setup>
-import Example1Son from "./Example1Son.vue";
+import Example2Son from "./Example2Son.vue";
 import { ref } from "vue";
 const modalValue = ref("Hello, Vue\n");
 </script>
 
 <template>
   <div class="example">
-    <Example1Son v-model="modalValue" />
+    <Example2Son v-model:title="modalValue" />
   </div>
 </template>
 
 <style scoped lang="css">
 .example:hover::before {
-  content: "D-Component v-model";
+  content: "1. v-model arguments";
 }
 </style>
