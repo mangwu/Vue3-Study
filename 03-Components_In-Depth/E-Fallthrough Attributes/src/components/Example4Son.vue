@@ -1,34 +1,29 @@
-<script setup lang="js">
-defineProps({
-  str:{
-    required: true,
-    type: String,
-  },
-  num: {
-    required: true,
-    type: Number,
-  },
-  boo: {
-    required:true,
-    type: Boolean,
-  },
-  arr: {
-    required: true,
-    type: Array,
-  },
-  obj: {
-    required: true,
-    type: Object,
-  }
+<script setup>
+import Dark from "../assets/dark.svg";
+import Light from "../assets/light.svg";
+defineOptions({
+  inheritAttrs: false
 });
 </script>
 
 <template>
-  <p>str: {{ str }}</p>
-  <p>num: {{ num }}</p>
-  <p>boo: {{ boo }}</p>
-  <p>arr: {{ arr }}</p>
-  <p>obj: {{ obj }}</p>
+  <div :class="['custom-class-name', $attrs.class]">
+    <img
+      :src="$attrs.class === 'light' ? Light : Dark"
+      @click="$attrs.onClick"
+    />
+    <div>Hello, Vue</div>
+  </div>
 </template>
 
-<style scoped lang="css"></style>
+<style scoped lang="css">
+.custom-class-name {
+  font-size: 25px;
+  text-align: center;
+  border-radius: 5px;
+}
+img {
+  height: 48px;
+  margin-top: 10px;
+}
+</style>

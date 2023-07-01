@@ -1,9 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="custom-class-name">
-    Hello, Vue
-  </div>
+  <div class="custom-class-name">Hello, Vue</div>
 </template>
 
 <style scoped lang="css">

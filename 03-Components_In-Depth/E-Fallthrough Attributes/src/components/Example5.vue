@@ -1,27 +1,36 @@
-<script setup lang="js">
-import Example5Son from './Example5Son.vue';
-import {reactive, ref} from "vue";
-const msg1 = ref("initial value")
-const msg2 = reactive({
-  firstName: "mang",
-  secondName: "wu",
-})
+<script setup>
+import Example5Son from "./Example5Son.vue";
+import { ref } from "vue";
+const theme = ref("light");
+function handlerClick() {
+  if (theme.value === "light") {
+    theme.value = "dark";
+  } else {
+    theme.value = "light";
+  }
+}
 </script>
 
 <template>
-  <div class="example example5">
-    <label for="msg1">msg1</label>
-    <input type="text" v-model="msg1" id="msg1" /><br />
-    <label for="first-name">firstName</label>
-    <input type="text" v-model="msg2.firstName" id="first-name" /><br />
-    <label for="msg1">secondName</label>
-    <input type="text" v-model="msg2.secondName" id="second-name" /><br />
-    <example5-son :msg1="msg1" :msg2="msg2" />
+  <div class="example">
+    <Example5Son :class="[theme]" @click="handlerClick" />
   </div>
 </template>
 
 <style scoped lang="css">
-.example5:hover::before {
-  content: "3. One-Way Data Flow";
+.example:hover::before {
+  content: "4. Accessing Fallthrough Attributes in JavaScript";
+}
+.dark {
+  border: 1px solid #c7c7c7;
+  background-color: #2a2a2a;
+  user-select: none;
+  color: #fff;
+}
+.light {
+  border: 1px solid #393939;
+  background-color: #ffffff;
+  color: #000;
+  user-select: none;
 }
 </style>

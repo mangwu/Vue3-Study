@@ -1,28 +1,29 @@
-<script setup lang="js">
-const props = defineProps({
-  msg1: String,
-  msg2: Object,
+<script setup>
+import Dark from "../assets/dark.svg";
+import Light from "../assets/light.svg";
+defineOptions({
+  inheritAttrs: false
 });
-import {computed, ref} from "vue";
-const myMsg = ref(props.msg1);
-const name = computed(() => props.msg2.firstName + " " + props.msg2.secondName);
+import { useAttrs } from "vue";
+const attrs = useAttrs();
+console.log(attrs.class);
 </script>
 
 <template>
-  <div class="box">
-    <label for="my-msg">myMsg</label>
-    <input type="text" v-model="myMsg" id="my-msg" /><br />
-    <label for="full-name">fullName:</label>
-    {{ name }}
+  <div :class="['custom-class-name', attrs.class]">
+    <img :src="attrs.class === 'light' ? Light : Dark" @click="attrs.onClick" />
+    <div>Hello, Vue</div>
   </div>
 </template>
 
 <style scoped lang="css">
-.box {
-  border: 1px solid #eee;
+.custom-class-name {
+  font-size: 25px;
+  text-align: center;
   border-radius: 5px;
-  padding: 1em;
-  box-shadow: 2px 0 2px 0 #ddd, 0 2px 2px 0 #ddd;
-  margin-top: 1em;
+}
+img {
+  height: 48px;
+  margin-top: 10px;
 }
 </style>
