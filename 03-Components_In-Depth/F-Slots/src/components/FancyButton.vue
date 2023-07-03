@@ -1,7 +1,15 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+const count = ref(0);
+function clickHandler() {
+  count.value++;
+}
+</script>
 
 <template>
-  <button class="fancy-btn"><slot> default-render-content </slot></button>
+  <button class="fancy-btn" @click="clickHandler">
+    <slot :count="count"> default-render-content </slot>
+  </button>
 </template>
 
 <style scoped lang="css">
@@ -15,5 +23,8 @@
   cursor: pointer;
   min-height: 25.5px;
   min-width: 40px;
+}
+.fancy-btn:disabled {
+  background: linear-gradient(315deg, #b1b2b2 25%, #e6e6e6);
 }
 </style>

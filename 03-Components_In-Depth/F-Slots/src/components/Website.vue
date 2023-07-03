@@ -28,10 +28,10 @@ header {
   font-weight: 600;
   text-align: center;
 }
-main{
+main {
   padding: 0 6px;
 }
-::v-deep p {
+:deep(main > p) {
   text-indent: 1em;
 }
 footer {
@@ -39,5 +39,6 @@ footer {
   bottom: 0;
   text-align: center;
   background: #eee;
+  width: 100%;
 }
 </style>
