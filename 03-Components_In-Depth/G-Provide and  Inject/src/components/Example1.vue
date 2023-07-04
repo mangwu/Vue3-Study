@@ -11,7 +11,6 @@ provide("msg", msg);
       <input type="text" v-model="msg" />
     <Example1Son />
     </div>
-    
   </div>
 </template>
 
@@ -20,7 +19,7 @@ provide("msg", msg);
   content: "4. Inject";
 }
 .wrapper {
-  border: 1px solid #eee;
+  border: 1px solid var(--color-border);
   padding: 1em;
 }
 </style>

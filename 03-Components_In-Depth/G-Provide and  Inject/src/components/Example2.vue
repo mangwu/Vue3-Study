@@ -1,17 +1,22 @@
 <script setup>
-import Example2Son from "./Example2Son.vue";
-import { ref } from "vue";
-const modalValue = ref("Hello, Vue\n");
+import { inject } from "vue";
+const msg = inject("msg", () => "这是注入msg的默认值");
 </script>
-
 <template>
-  <div class="example">
-    <Example2Son v-model:title="modalValue" />
+  <div class="grand-son example">
+    Message to Example2: <span>{{ msg }}</span>
   </div>
 </template>
 
 <style scoped lang="css">
 .example:hover::before {
-  content: "1. v-model arguments";
+  content: "4.1 Injection Default Values";
+}
+.grand-son {
+  border: 1px solid var(--color-border);
+  padding: 1em;
+}
+span {
+  font-weight: 600;
 }
 </style>

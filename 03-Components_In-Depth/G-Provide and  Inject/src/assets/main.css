@@ -25,33 +25,33 @@ a,
   cursor: pointer;
   height: 300px;
   width: 330px;
-  background: #fff;
+  color: var(--color-text);
+  background: var(--color-background);
   border-radius: 15px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.03),
     0 2px 6px -1px rgba(0, 0, 0, 0.02), 0 4px 4px 0 rgba(0, 0, 0, 0.02),
     3px 0 3px 0 rgba(0, 0, 0, 0.03), 2px 0 6px -1px rgba(0, 0, 0, 0.02),
     4px 0 4px 0 rgba(0, 0, 0, 0.02);
-  border: 1px solid rgb(243, 243, 243);
+  border: 1px solid var(--color-border);
   transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
   padding: 1px 8px;
   padding-top: 16px;
 }
 .example:hover {
   transform: scale(1.1);
-  background: #fff;
+  background: var(--color-background);
 }
 .example:hover::before {
-  color: white;
+  color: var(--color-text-soft);
   position: absolute;
   font-size: 18px;
   z-index: 999;
-  background-color: #06ee50;
+  background-color: var(--color-primary);
   padding: 0px 4px;
   top: -16px;
   left: 0;
   transform: translateX(-50%);
   min-height: 32px;
-  opacity: 0.8;
   width: fit-content;
   min-width: 32px;
   display: flex;
@@ -59,8 +59,17 @@ a,
   align-items: center;
   border-radius: 16px;
 }
-#app {
+.app-wrapper {
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
+}
+
+input {
+  color: var(--color-text-soft);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+}
+input:focus {
+  outline: 1px solid var(--color-border);
 }

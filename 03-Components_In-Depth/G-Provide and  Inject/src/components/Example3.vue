@@ -1,32 +1,33 @@
 <script setup>
 import Example3Son from "./Example3Son.vue";
-import { ref, computed } from "vue";
-const firstName = ref("mang");
-const secondName = ref("wu");
-const name = computed(() => `${firstName.value} ${secondName.value}`);
+import { ref, provide, readonly } from "vue";
+const msg = ref("hello");
+const count = ref(0);
+function setMsg(value) {
+  msg.value = value;
+}
+provide("msg", msg);
+provide("setMsg", setMsg);
+provide("read-only-count", readonly(count));
 </script>
 
 <template>
   <div class="example">
-    <Example3Son
-      v-model:first-name="firstName"
-      v-model:second-name="secondName"
-    />
-    <div>
-      fullname:
-      <div class="show">
-        {{ name }}
-      </div>
+    <div class="wrapper">
+      <div>msg: ref("{{ msg }}")</div>
+      <pre>{{ setMsg }}</pre>
+      <div>readonly count: {{ count }}</div>
+      <Example3Son />
     </div>
   </div>
 </template>
 
 <style scoped lang="css">
 .example:hover::before {
-  content: "2. Multiple v-model bindings";
+  content: "5. Working with Reactivity";
 }
-.show {
-  font-size: 20px;
-  color: #0e4f49;
+.wrapper {
+  border: 1px solid var(--color-border);
+  padding: 0.3em;
 }
 </style>

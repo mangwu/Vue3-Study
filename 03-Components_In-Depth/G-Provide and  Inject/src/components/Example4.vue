@@ -1,32 +1,30 @@
 <script setup>
-import Example4Son from "./Example4Son.vue";
-import { ref, computed } from "vue";
-const firstName = ref("mang");
-const secondName = ref("wu");
-const name = computed(() => `${firstName.value} ${secondName.value}`);
+import { inject } from "vue";
+import { themeKey, exchangeThemeKey } from "../store/keys.js";
+import Light from "../assets/light.svg";
+import Dark from "../assets/dark.svg";
+
+const theme = inject(themeKey);
+const exchangeTheme = inject(exchangeThemeKey);
 </script>
 
 <template>
   <div class="example">
-    <Example4Son
-      v-model:first-name.capitalize="firstName"
-      v-model:second-name.capitalize="secondName"
+    <img
+      :src="theme === 'light' ? Light : Dark"
+      alt=""
+      @click="exchangeTheme"
     />
-    <div>
-      fullname:
-      <div class="show">
-        {{ name }}
-      </div>
-    </div>
   </div>
 </template>
 
 <style scoped lang="css">
 .example:hover::before {
-  content: "3. Handling v-model modifiers";
+  content: "6. Working with Symbol Keys";
 }
-.show {
-  font-size: 20px;
-  color: #0e4f49;
+.example {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

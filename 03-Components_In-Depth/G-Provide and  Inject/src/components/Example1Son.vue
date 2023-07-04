@@ -10,7 +10,7 @@ import Example1GrandSon from "./Example1GrandSon.vue";
 
 <style scoped lang="css">
 .son {
-  border: 1px solid #eee;
+  border: 1px solid var(--color-border);
   padding: 1em;
 }
 
