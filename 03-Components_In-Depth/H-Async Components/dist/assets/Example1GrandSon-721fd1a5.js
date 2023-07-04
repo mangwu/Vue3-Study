@@ -1,0 +1,1 @@
+import{_ as e,o as n,c as o}from"./index-b008c030.js";const _={},c={class:"grand-son"};function a(s,t){return n(),o("div",c," Async loading from Example1Son.vue ")}const r=e(_,[["render",a],["__scopeId","data-v-bed5c2f1"]]);export{r as default};
