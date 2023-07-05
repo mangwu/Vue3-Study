@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from "vue";
+import Example4Son from "./Example4Son.vue";
 const value = ref("Hello");
-const color = ref("#000");
+const color = ref("#22aa33");
 </script>
 
 <template>
@@ -10,13 +11,14 @@ const color = ref("#000");
       <input type="text" v-model="value" />
       <input type="color" v-model="color" />
     </div>
-    <div v-demo="{ text: value, color }"></div>
+    <div>Example4Son ↓</div>
+    <Example4Son v-demo="{ text: value, color }" />
   </div>
 </template>
 
 <style scoped lang="css">
 .example:hover::before {
-  content: "4. Object Literals";
+  content: "5. Usage on Components";
 }
 .form {
   display: flex;

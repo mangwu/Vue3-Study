@@ -2,6 +2,7 @@
 import Example1 from "./components/Example1.vue";
 import Example2 from "./components/Example2.vue";
 import Example3 from "./components/Example3.vue";
+import Example4 from "./components/Example4.vue";
 import ExampleLast from "./components/ExampleLast.vue";
 import { themeKey, exchangeThemeKey } from "./store/keys.js";
 import { provide, ref, watch } from "vue";
@@ -27,6 +28,7 @@ provide(exchangeThemeKey, changeTheme);
     <Example1 />
     <Example2 />
     <Example3 />
+    <Example4 />
     <!-- <Example5 /> -->
     <!-- <Example6 /> -->
     <!-- <Example7 /> -->
