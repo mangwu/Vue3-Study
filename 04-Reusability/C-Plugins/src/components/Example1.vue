@@ -14,5 +14,4 @@ html[lang="en"] .example:hover::before {
 html[lang="zh-Hans"] .example:hover::before {
   content: "1. 介绍";
 }
-
 </style>

@@ -9,7 +9,6 @@ import useThemeChange from "./composables/useThemeChange.js";
 import useLangChange from "./composables/useLangChange.js";
 useThemeChange();
 useLangChange();
-
 </script>
 
 <template>
