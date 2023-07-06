@@ -1,31 +1,32 @@
-<!-- eslint-disable no-unused-vars -->
 <script setup>
-import { ref } from "vue";
-const value = ref("Hello");
-const arg = ref("arg1");
-const bindingValue = ref(null);
-const vExample = {
-  mounted(el, binding, _vnode, _prevNode) {
-    bindingValue.value = binding;
-  },
-  updated(el, binding, vnode, prevNode) {
-    console.log(binding.value, binding.oldValue);
-    bindingValue.value.value = binding.value;
-    bindingValue.value.oldValue = binding.oldValue;
-  }
-};
+import { getCurrentInstance } from "vue";
+const { proxy } = getCurrentInstance();
+const kkk = proxy.$translate("example2.content.3", false);
 </script>
 
 <template>
   <div class="example">
-    <input type="text" v-model="value" />
-    <div v-example:[arg].foo.bar="value"></div>
-    <pre>{{ bindingValue }}</pre>
+    <h3>
+      {{ $translate("example2.title") }}
+    </h3>
+    <p v-for="i of 3" :key="i">
+      {{ $translate(`example2.content.${i - 1}`) }}
+    </p>
+    <p>{{ kkk }}</p>
   </div>
 </template>
 
 <style scoped lang="css">
-.example:hover::before {
-  content: "2.1 Hook Arguments";
+html[lang="en"] .example:hover::before {
+  content: "2. Writing a Plugin";
+}
+html[lang="zh-Hans"] .example:hover::before {
+  content: "2. 编写一个插件";
+}
+p {
+  text-indent: 1em;
+}
+html[lang="en"] p {
+  line-height: 1.4;
 }
 </style>

@@ -19,8 +19,11 @@ const exchangeTheme = inject(exchangeThemeKey);
 </template>
 
 <style scoped lang="css">
-.example:hover::before {
+html[lang="en"] .example:hover::before {
   content: "Last. Change Theme";
+}
+html[lang="zh-Hans"] .example:hover::before {
+  content: "最后. 主题切换";
 }
 .example {
   display: flex;
