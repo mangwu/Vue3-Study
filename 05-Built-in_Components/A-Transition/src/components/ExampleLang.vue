@@ -1,11 +1,15 @@
 <script setup>
 import { inject } from "vue";
-import { langKey, exchangeLangKey } from "../store/keys.js";
+import { langKey, exchangeLangKey, themeKey } from "../store/keys.js";
 import EN from "../assets/en.svg";
 import ZH from "../assets/zh.svg";
+import EN_DARK from "../assets/en_dark.svg";
+import ZH_DARK from "../assets/zh_dark.svg";
 
 const lang = inject(langKey);
+const theme = inject(themeKey);
 const exchangeLang = inject(exchangeLangKey);
+
 function changeLang(_e, type = "zh-Hans") {
   exchangeLang(type);
 }
@@ -14,7 +18,15 @@ function changeLang(_e, type = "zh-Hans") {
 <template>
   <div class="example">
     <img
-      :src="lang === 'en' ? EN : ZH"
+      :src="
+        theme === 'light'
+          ? lang === 'en'
+            ? EN
+            : ZH
+          : lang === 'en'
+          ? EN_DARK
+          : ZH_DARK
+      "
       alt=""
       @click="(e) => changeLang(e, lang === 'en' ? 'zh-Hans' : 'en')"
     />
@@ -34,7 +46,7 @@ html[lang="zh-Hans"] .example:hover::before {
   align-items: center;
 }
 img {
-  background-color: #fff;
+  background-color: var(--backgroud-color-0);
   border-radius: 16px;
 }
 </style>

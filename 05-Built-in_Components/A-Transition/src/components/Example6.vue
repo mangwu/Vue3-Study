@@ -33,7 +33,7 @@ html[lang="en"] .example:hover::before {
   content: "2.6 Using Transitions and Animations Together";
 }
 html[lang="zh-Hans"] .example:hover::before {
-  content: "2.6 同时使用 transition 和 animation"
+  content: "2.6 同时使用 transition 和 animation";
 }
 html[lang="en"] h2 {
   margin-top: 24px;

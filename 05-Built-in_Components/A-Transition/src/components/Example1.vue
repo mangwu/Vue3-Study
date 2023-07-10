@@ -94,6 +94,4 @@ html[lang="zh-Hans"] .example:hover::before {
 .show4 {
   display: block;
 }
-
-
 </style>
