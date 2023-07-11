@@ -43,11 +43,11 @@ function clickHandler(_e, index) {
   <div class="example">
     <div class="btn">
       <FancyButton
-        v-for="(value, key) of raw"
+        v-for="(_value, key) of raw"
         :key="key"
         @click="(e) => clickHandler(e, key)"
       >
-        {{ $translate("example10.0") + $translate("example10.1") }}
+        {{ $translate("example10.1") }}
         {{ Number(key) + 1 }}
       </FancyButton>
     </div>

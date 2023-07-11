@@ -9,6 +9,7 @@ import Example7 from "./components/Example7.vue";
 import Example8 from "./components/Example8.vue";
 import Example9 from "./components/Example9.vue";
 import Example10 from "./components/Example10.vue";
+import Example11 from "./components/Example11.vue";
 import ExampleLast from "./components/ExampleLast.vue";
 import ExampleLang from "./components/ExampleLang.vue";
 import useThemeChange from "./composables/useThemeChange.js";
@@ -29,7 +30,7 @@ useLangChange();
     <Example8 />
     <Example9 />
     <Example10 />
-    <!-- <Example11 /> -->
+    <Example11 />
     <ExampleLang />
     <ExampleLast />
   </div>

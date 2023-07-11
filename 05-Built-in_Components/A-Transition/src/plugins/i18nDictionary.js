@@ -46,7 +46,16 @@ export default {
         "此时你需要显式地传入 type prop 来声明，告诉 Vue 需要关心哪种类型，传入的值是 animation 或 transition ，以确定*-enter-from 类名的移除时机"
       ]
     },
-    example10: ["例子 10", "子组件"]
+    example10: ["例子 10", "子组件"],
+    example11: {
+      title: "动态过渡",
+      btn: ["上一个", "下一个"],
+      content: [
+        "<Transition> 的 props (比如 name) 也可以是动态的！这让我们可以根据状态变化动态地应用不同类型的过渡",
+        "这个特性的用处是可以提前定义好多组 CSS 过渡或动画的 class，然后在它们之间动态切换。",
+        "最后，创建动态过渡的终极方式还是创建可复用的过渡组件，并让这些组件根据动态的 props 来改变过渡的效果。"
+      ]
+    }
   },
   en: {
     common: ["Toggle", "Addition"],
@@ -95,6 +104,15 @@ export default {
         "However, in some cases you may want to have both on the same element, for example having a CSS animation triggered by Vue, along with a CSS transition effect on hover."
       ]
     },
-    example10: ["Example 10", "Son Component"]
+    example10: ["Example 10", "Son Component"],
+    example11: {
+      title: "Dynamic Transitions",
+      btn: ["Previous", "Next"],
+      content: [
+        "<Transition> props like name can also be dynamic! It allows us to dynamically apply different transitions based on state change",
+        "This can be useful when you've defined CSS transitions / animations using Vue's transition class conventions and want to switch between them.",
+        "Finally, the ultimate way of creating dynamic transitions is through reusable transition components that accept props to change the nature of the transition(s) to be used."
+      ]
+    }
   }
 };

@@ -67,7 +67,7 @@ a,
   flex-wrap: wrap;
 }
 
-input {
+input[type="text"] {
   color: var(--color-text);
   background: var(--color-background-2);
   border: 1px solid var(--color-border-hover);
@@ -78,6 +78,6 @@ input {
     2px 0 6px -1px var(--color-box-shadow-2),
     4px 0 4px 0 var(--color-box-shadow-2);
 }
-input:focus {
+input[type="text"]:focus {
   outline: 1px solid var(--color-border);
 }
