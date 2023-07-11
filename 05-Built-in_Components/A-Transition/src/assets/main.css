@@ -59,6 +59,7 @@ a,
   justify-content: center;
   align-items: center;
   border-radius: 16px;
+  transition: content 0.45s ease;
 }
 .app-wrapper {
   display: flex;

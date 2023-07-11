@@ -31,7 +31,7 @@ html[lang="zh-Hans"] .example:hover::before {
 }
 .wrapper {
   margin: 0 auto;
-  margin-top: 24px; 
+  margin-top: 24px;
 }
 
 .parent.v-leave-to,

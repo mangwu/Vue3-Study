@@ -60,6 +60,7 @@
   --color-text-second: var(--c-text-light-0);
 
   --color-primary: var(--c-primary-2);
+  --color-primary-1: var(--c-primary-2);
 }
 :root.dark {
   --color-background-0: var(--c-black-1);
@@ -77,6 +78,7 @@
   --color-text-second: var(--c-text-dark-0);
 
   --color-primary: var(--c-primary-2);
+  --color-primary-1: var(--c-primary-3);
 }
 
 *,
@@ -91,7 +93,7 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background-0);
-  transition: color 0.5s, background-color 0.5s;
+  transition: color 0.8s ease, background-color 0.8s ease;
   line-height: 1.6;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -100,4 +102,18 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+:root::-webkit-scrollbar {
+  width: 4px;
+}
+:root::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  opacity: 0.2;
+  background: var(--color-primary-1);
+}
+:root::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: var(--color-background-2);
 }

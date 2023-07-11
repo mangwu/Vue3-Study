@@ -1,6 +1,6 @@
 export default {
   "zh-Hans": {
-    common: ["切换"],
+    common: ["切换", "增加"],
     example1: [
       "由 v-if 所触发的切换",
       "由 v-show 所触发的切换",
@@ -45,10 +45,11 @@ export default {
         "然而在某些场景中，或许想要在同一个元素上同时使用它们两个，举例来说，Vue 触发了一个 CSS 动画，同时鼠标悬停触发另一个 CSS 过渡",
         "此时你需要显式地传入 type prop 来声明，告诉 Vue 需要关心哪种类型，传入的值是 animation 或 transition ，以确定*-enter-from 类名的移除时机"
       ]
-    }
+    },
+    example10: ["例子 10", "子组件"]
   },
   en: {
-    common: ["Toggle"],
+    common: ["Toggle", "Addition"],
     example1: [
       "Conditional rendering via v-if",
       "Conditional display via v-show",
@@ -93,6 +94,7 @@ export default {
         "It can either be transitionend or animationend, depending on the type of CSS rules applied.",
         "However, in some cases you may want to have both on the same element, for example having a CSS animation triggered by Vue, along with a CSS transition effect on hover."
       ]
-    }
+    },
+    example10: ["Example 10", "Son Component"]
   }
 };

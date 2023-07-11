@@ -10,11 +10,15 @@ const exchangeTheme = inject(exchangeThemeKey);
 
 <template>
   <div class="example">
-    <img
-      :src="theme === 'light' ? Light : Dark"
-      alt=""
-      @click="exchangeTheme"
-    />
+    <Transition mode="out-in" name="fade" appear>
+      <img
+        v-if="theme === 'light'"
+        :src="Light"
+        alt="light theme graph"
+        @click="exchangeTheme"
+      />
+      <img v-else :src="Dark" alt="dark theme graph" @click="exchangeTheme" />
+    </Transition>
   </div>
 </template>
 
@@ -29,5 +33,17 @@ html[lang="zh-Hans"] .example:hover::before {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.fade-leave-to,
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-leave-from,
+.fade-enter-to {
+  opacity: 1;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
 }
 </style>
