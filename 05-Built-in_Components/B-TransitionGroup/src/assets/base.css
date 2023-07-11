@@ -1,0 +1,119 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --c-white-0: #ffffff;
+  --c-white-1: #f8f8f8;
+  --c-white-2: #e8e8e8;
+  --c-white-3: #d8d8d8;
+
+  --c-gray-0: #c0c0c0;
+  --c-gray-1: #b0b0b0;
+  --c-gray-2: #909090;
+  --c-gray-3: #808080;
+
+  --c-deep-0: #686868;
+  --c-deep-1: #585858;
+  --c-deep-2: #404040;
+  --c-deep-3: #303030;
+
+  --c-black-0: #202020;
+  --c-black-1: #181818;
+  --c-black-2: #080808;
+  --c-black-3: #000000;
+
+  --c-primary-0: #f1fff0;
+  --c-primary-1: #96ff94;
+  --c-primary-2: #40f848;
+  --c-primary-3: #0f8520;
+
+  --c-text-light-0: var(--c-deep-3);
+  --c-text-light-1: var(--c-black-1);
+  --c-text-light-2: var(--c-black-3);
+
+  --c-text-dark-0: var(--c-white-0);
+  --c-text-dark-1: var(--c-gary-0);
+  --c-text-dark-2: var(--c-gray-1);
+
+  --c-divider-light-1: var(--c-white-0);
+  --c-divider-light-2: var(--c-white-1);
+  --c-divider-dark-1: var(--c-gray-3);
+  --c-divider-dark-2: var(--c-black-3);
+
+  --c-box-shadow-light-1: rgba(0, 0, 0, 0.03);
+  --c-box-shadow-light-2: rgba(0, 0, 0, 0.02);
+  --c-box-shadow-dark-1: rgba(255, 255, 255, 0.13);
+  --c-box-shadow-dark-2: rgba(255, 255, 255, 0.12);
+}
+
+:root.light {
+  --color-background-0: var(--c-white-0);
+  --color-background-1: var(--c-white-1);
+  --color-background-2: var(--c-white-3);
+
+  --color-border: var(--c-divider-light-2);
+  --color-border-hover: var(--c-divider-light-1);
+
+  --color-box-shadow-1: var(--c-box-shadow-light-1);
+  --color-box-shadow-2: var(--c-box-shadow-light-2);
+
+  --color-text-heading: var(--c-text-light-2);
+  --color-text: var(--c-text-light-1);
+  --color-text-second: var(--c-text-light-0);
+
+  --color-primary: var(--c-primary-2);
+  --color-primary-1: var(--c-primary-2);
+}
+:root.dark {
+  --color-background-0: var(--c-black-1);
+  --color-background-1: var(--c-black-2);
+  --color-background-2: var(--c-deep-3);
+
+  --color-border: var(--c-divider-dark-2);
+  --color-border-hover: var(--c-divider-dark-1);
+
+  --color-box-shadow-1: var(--c-box-shadow-dark-1);
+  --color-box-shadow-2: var(--c-box-shadow-dark-2);
+
+  --color-text-heading: var(--c-text-dark-0);
+  --color-text: var(--c-text-dark-2);
+  --color-text-second: var(--c-text-dark-0);
+
+  --color-primary: var(--c-primary-2);
+  --color-primary-1: var(--c-primary-3);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background-0);
+  transition: color 0.8s ease, background-color 0.8s ease;
+  line-height: 1.6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  opacity: 0.2;
+  background: var(--color-primary-1);
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: var(--color-background-2);
+}
