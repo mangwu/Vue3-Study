@@ -1,0 +1,51 @@
+<script setup>
+import gsap from "gsap";
+
+function beforeEneterHandler(el) {
+  gsap.set(el, {
+    scaleX: 0.25,
+    scaleY: 0.25,
+    opacity: 1
+  });
+}
+function enterHandler(el, done) {
+  gsap.to(el, {
+    duration: 1,
+    scaleX: 1,
+    scaleY: 1,
+    opacity: 1,
+    ease: "elastic.inOut(2.5, 1)",
+    onComplete: done
+  });
+}
+
+function leaveHandler(el, done) {
+  gsap.to(el, {
+    duration: 0.7,
+    scaleX: 1,
+    scaleY: 1,
+    x: 250,
+    ease: "elastic.inOut(2.5, 1)"
+  });
+  gsap.to(el, {
+    duration: 0.2,
+    delay: 0.5,
+    opacity: 0,
+    onComplete: done
+  });
+}
+</script>
+
+<template>
+  <Transition
+    @before-enter="beforeEneterHandler"
+    @enter="enterHandler"
+    @leave="leaveHandler"
+    :css="false"
+    mode="out-in"
+  >
+    <slot></slot>
+  </Transition>
+</template>
+
+<style scoped lang="css"></style>

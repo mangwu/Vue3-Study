@@ -2,7 +2,7 @@
  * @Author: mangwu                                                             *
  * @File: build.js                                                             *
  * @Date: 2023-06-14 09:37:12                                                  *
- * @LastModifiedDate: 2023-06-25 22:37:10                                      *
+ * @LastModifiedDate: 2023-07-12 14:45:11                                      *
  * @ModifiedBy: mangwu                                                         *
  * -----------------------                                                     *
  * Copyright (c) 2023 mangwu                                                   *
@@ -28,6 +28,7 @@ const ignore = new Set([
   "snippet.js",
   "./.git",
   "./images",
+  "./Basic-Copy",
 ]);
 
 const hash = new Map();
@@ -52,7 +53,7 @@ class FileTree {
         if (ignore.has(file)) continue;
         const curPath = this.path + "/" + file;
         const stats = fs.statSync(curPath);
-        let type = stats.isFile() ? "file" :  "folder";
+        let type = stats.isFile() ? "file" : "folder";
         if (type === "file") {
           if (file.indexOf(".html") === -1 && file.indexOf(".js") === -1) {
             continue;
@@ -94,12 +95,7 @@ if (this.location) {
 }
 
 const dfs = (fileTree) => {
-  const {
-    name,
-    path,
-    type,
-    next
-  } = fileTree;
+  const { name, path, type, next } = fileTree;
   if (type === "file") {
     return `\t\t<div class="file"><a href="${
       origin + path.substring(2)
