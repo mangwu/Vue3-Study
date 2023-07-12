@@ -1,5 +1,3 @@
-console.log(__dirname);
-console.log(process.cwd());
 const DIRNAME = __dirname; // 当前执行文件的绝对路径
 const CMDDIRNAME = process.cwd(); // 当前执行node命令所在地址
 
