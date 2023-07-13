@@ -12,6 +12,11 @@ const props = defineProps({
     type: Boolean,
     default: true
   },
+  disabled: {
+    // 是否禁用Teleport
+    type: Boolean,
+    default: false
+  },
   maskClosable: {
     // 点击蒙层是否允许关闭
     type: Boolean,
@@ -74,7 +79,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <Teleport to="body">
+  <Teleport to="body" :disabled="disabled">
     <CustomTransition name="modal">
       <div
         :class="['modal-mask', mask ? 'masked' : '']"

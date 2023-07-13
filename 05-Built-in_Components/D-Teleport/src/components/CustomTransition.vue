@@ -1,12 +1,11 @@
 <script setup>
 import gsap from "gsap";
-const props = defineProps({
+defineProps({
   name: {
     type: String,
     default: ""
   }
 });
-console.log(props.name);
 function beforeEneterHandler(el) {
   gsap.set(el, {
     scaleX: 0.25,

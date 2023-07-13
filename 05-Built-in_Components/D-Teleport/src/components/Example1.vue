@@ -54,9 +54,9 @@ function openModal2() {
 
 <style scoped lang="css">
 html[lang="en"] .example:hover::before {
-  content: "1. Hello Vue!";
+  content: "1. Basic Usage";
 }
 html[lang="zh-Hans"] .example:hover::before {
-  content: "1. 你好 Vue！";
+  content: "1. 基本用法";
 }
 </style>
