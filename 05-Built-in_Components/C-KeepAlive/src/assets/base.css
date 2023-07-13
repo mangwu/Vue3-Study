@@ -61,6 +61,7 @@
 
   --color-primary: var(--c-primary-2);
   --color-primary-1: var(--c-primary-2);
+  --color-primary-2: var(--c-primary-3);
 }
 :root.dark {
   --color-background-0: var(--c-black-1);
@@ -79,6 +80,7 @@
 
   --color-primary: var(--c-primary-2);
   --color-primary-1: var(--c-primary-3);
+  --color-primary-2: var(--c-primary-2);
 }
 
 *,

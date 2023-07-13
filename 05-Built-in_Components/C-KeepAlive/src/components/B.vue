@@ -1,6 +1,20 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onActivated, onDeactivated, onUnmounted } from "vue";
+const emit = defineEmits(["update-actived", "update-deactived", "update-all"]);
+onActivated(() => {
+  // 组件被激活
+  emit("update-actived", "B");
+});
+onDeactivated(() => {
+  // 组件失活，组件被卸载时也会调用
+  emit("update-deactived", "B");
+});
+onUnmounted(() => {
+  // 组件卸载
+  emit("update-all", "B");
+});
 const message = ref("");
+
 </script>
 
 <template>
