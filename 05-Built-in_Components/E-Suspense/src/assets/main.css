@@ -1,0 +1,85 @@
+@import "./base.css";
+
+#app {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: var(--color-background-1);
+  }
+}
+
+.example {
+  cursor: pointer;
+  height: 300px;
+  width: 330px;
+  color: var(--color-text);
+  background: var(--color-background-1);
+  border-radius: 15px;
+  box-shadow: 0 3px 3px 0 var(--color-box-shadow-1),
+    0 2px 6px -1px var(--color-box-shadow-2),
+    0 4px 4px 0 var(--color-box-shadow-2), 3px 0 3px 0 var(--color-box-shadow-1),
+    2px 0 6px -1px var(--color-box-shadow-2),
+    4px 0 4px 0 var(--color-box-shadow-2);
+  border: 1px solid var(--color-border);
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+  padding: 1px 8px;
+  padding-top: 16px;
+}
+.example:hover {
+  transform: scale(1.1);
+  background: var(--color-background-1);
+}
+.example:hover::before {
+  color: var(--color-text-heading);
+  position: absolute;
+  font-size: 18px;
+  z-index: 999;
+  background-color: var(--color-primary);
+  padding: 0px 4px;
+  top: -16px;
+  left: 0;
+  transform: translateX(-50%);
+  min-height: 32px;
+  width: fit-content;
+  min-width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  transition: content 0.45s ease;
+}
+.app-wrapper {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+input[type="text"],
+input[type="number"] {
+  color: var(--color-text);
+  background: var(--color-background-2);
+  border: 1px solid var(--color-border-hover);
+  padding: 2px 4px;
+  width: 70%;
+  box-shadow: 0 3px 3px 0 var(--color-box-shadow-1),
+    0 2px 6px -1px var(--color-box-shadow-2),
+    0 4px 4px 0 var(--color-box-shadow-2), 3px 0 3px 0 var(--color-box-shadow-1),
+    2px 0 6px -1px var(--color-box-shadow-2),
+    4px 0 4px 0 var(--color-box-shadow-2);
+}
+input[type="text"]:focus {
+  outline: 1px solid var(--color-border);
+}
